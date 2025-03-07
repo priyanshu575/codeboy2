@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBoy - AI Chat</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="splash-screen" id="splash">
+        <img src="chatbot.png" alt="ChatBoy Logo">
+        <p>Welcome to ChatBoy...</p>
+        <div class="loader"></div>
+    </div>
+
+    <div class="chat-container" id="chat-container">
+        <!-- Header -->
+        <div class="chat-header">
+            ChatBoy - AI Assistant
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-body" id="chat-messages">
+            <div class="message bot-message">
+                <div class="avatar bot-avatar"></div>
+                <div class="message-content">
+                    <span class="message-text">Hello! How can I assist you today?</span>
+                    <span class="timestamp">10:00 AM</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Field -->
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message..." aria-label="Chat input">
+            <button class="send-btn" onclick="sendMessage()">
+                <img src="send.png" alt="Send">
+            </button>
+        </div>
+    </div>
+
+    <div class="watermark">Hello Helmuth</div>
+
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('splash').style.opacity = '0';
+                document.getElementById('splash').style.visibility = 'hidden';
+                setTimeout(() => {
+                    document.getElementById('chat-container').style.opacity = '1';
+                    document.getElementById('chat-container').style.visibility = 'visible';
+                }, 1000);
+            }, 2000);
+        };
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>
